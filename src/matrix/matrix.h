@@ -4,6 +4,8 @@
 // Most useful standard library implementation of a vector
 // Seasoned C++ programmers swear by this data structure
 #include <vector>
+#include <iostream>
+#include <fstream>
 
 // A template allows an arbitrary type T to be passed into a class as a
 // parameter, so a single class definition can apply to different types 
@@ -33,7 +35,12 @@ template <typename T> class Matrix {
     
         // Addition + operator between matrices
         Matrix<T> operator+(const Matrix<T>& rhs);
-    
+		Matrix<T> operator+(const T s);
+
+        // Multiply * operator between matrices
+        Matrix<T> operator*(const Matrix<T>& rhs);
+		Matrix<T> operator*(const T r);
+
         // Selection operator (i,j) to access elements
         T& operator()(const unsigned int &row, const unsigned int &col);
         const T& operator()(const unsigned int &row, const unsigned int &col) const;
@@ -41,6 +48,12 @@ template <typename T> class Matrix {
         // Accessor methods for row and column sizes
         unsigned int get_rows() const;
         unsigned int get_cols() const;
+		
+		// print matrix
+		void print();
+		
+		// save matrix to csvfile
+		void save(std::string filename);
   
 };
 

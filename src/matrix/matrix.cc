@@ -4,6 +4,8 @@
 
 // include the header declarations
 #include "matrix.h"
+#include <iostream>
+#include <fstream>
 
 //*************
 //
@@ -131,6 +133,90 @@ Matrix<T> Matrix<T>::operator+(const Matrix<T>& rhs) {
     }
   
     return result;
+}
+
+// Addition of a matrix with a scalar value
+template<typename T>
+Matrix<T> Matrix<T>::operator+(const T s) {
+    // Create new matrix to store result, initialize to zero
+    Matrix result(rows, cols, 0.0);
+  
+    // Add each matrix element-by-element
+    for (unsigned int i=0; i<rows; i++) {
+        for (unsigned int j=0; j<cols; j++) {
+            result(i,j) = this->mat[i][j] + s;
+        }
+    }
+  
+    return result;
+}
+
+// Multiply of two matrices
+template<typename T>
+Matrix<T> Matrix<T>::operator*(const Matrix<T>& rhs){
+    // Create new matrix to store result, initialize to zero
+   	Matrix result(rows, cols, 0.0);
+  
+	// multiply each matrix element-by-element
+   	for (unsigned int i=0; i<rows; i++) {
+       	for (unsigned int j=0; j<cols; j++) {
+			for (unsigned int k=0; k<cols; k++) {
+           		result(i,j) += this->mat[i][k] * rhs(k,j);
+			}
+       	}
+   	}
+	return result;
+}
+// multiply matrix with a scalar value
+template<typename T>
+Matrix<T> Matrix<T>::operator*(const T r){
+    // Create new matrix to store result, initialize to zero
+   	Matrix result(rows, cols, 0.0);
+  
+	// multiply each matrix element-by-element
+   	for (unsigned int i=0; i<rows; i++) {
+       	for (unsigned int j=0; j<cols; j++) {
+           	result(i,j) += this->mat[i][j] * r;
+		}
+   	}
+	return result;
+}
+
+
+template<typename T>
+void Matrix<T>::print() {
+// Print out the third matrix as a text array
+	int i,j;
+    for (int i=0; i<this->get_rows(); i++) {
+        for (int j=0; j<this->get_cols(); j++) {
+            std::cout << this->mat[i][j] << "\t";
+        }
+        std::cout << std::endl;
+    }
+
+}
+
+// save matrix into a csv file
+template<typename T>
+void Matrix<T>::save(std::string filename){
+	// each row as seperated by ,
+	std::cout << filename<<std::endl;
+	std::ofstream csvf(filename); // open the file
+	int i,j;
+    for (int i=0; i<this->get_rows(); i++) {
+        for (int j=0; j<this->get_cols(); j++) {
+			if (j==get_cols()-1){
+			csvf << this->mat[i][j];
+			}
+			else{
+            csvf << this->mat[i][j] << ",";
+			}
+        }
+        csvf << '\n';
+    }
+
+	csvf.close(); // close file
+
 }
 
 #endif // CW13_MATRIX_CPP_
