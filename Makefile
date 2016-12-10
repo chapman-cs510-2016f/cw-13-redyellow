@@ -5,7 +5,7 @@
 .PHONY : test clean
 
 # Sets default compiler options
-export CXX = g++
+export CXX = g++ -std=c++11
 export CXXFLAGS = -Wall -O2
 # Change to flags below for debugging with gdb
 #export CXXFLAGS = -Wall -O0 -g
