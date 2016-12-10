@@ -1,8 +1,8 @@
 # CS510 CW 13
 
-**Author(s):** _\<your name(s)\>_
+**Author(s):** _Nengyin Zhu, Kaiqin Huang_
 
-[![Build Status](https://travis-ci.org/chapman-cs510-2016f/cw-13-YOURNAME.svg?branch=master)](https://travis-ci.org/chapman-cs510-2016f/cw-13-YOURNAME)
+[![Build Status](https://travis-ci.org/chapman-cs510-2016f/cw-13-redyellow.svg?branch=master)](https://travis-ci.org/chapman-cs510-2016f/cw-13-redyellow)
 
 **Due date:** 2016/12/06
 
@@ -37,7 +37,7 @@ Complete the following exercises, saving your solutions in the indicated files.
 
 Analyze in this section what you found useful about this assignment in your own words. Include any lingering questions or comments that you may have.
 
-**CHANGEME**
+**I learned how to use matrix in C++, and operator-overloading, template class, template function, save output into csv file**
 
 ## Honor Pledge
 
@@ -48,4 +48,4 @@ I pledge that all the work in this repository is my own with only the following 
 
 Signed,
 
-**YOURNAME**
+**Nengyin Zhu, Kaiqin Huang**
