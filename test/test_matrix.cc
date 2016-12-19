@@ -8,11 +8,11 @@ int main() {
     Matrix<long double> mat1(10, 10, 1.0);
     // The second has all elements set to 2.0
     Matrix<long double> mat2(10, 10, 2.0);
-  
+
     // Set a few elements differently as a test of accessors
     mat1(3,4) = 10.0;
     mat2(1,2) = -15.0;
-  
+
     // Add two matrices
 	std::cout << "Add two matrices:" << std::endl;
 	Matrix<long double> mat3 = mat1 + mat2;
@@ -39,9 +39,6 @@ int main() {
 	std::cout << "save matrix to csv file:" << std::endl;
 	std::string filename="matrix.csv";
 	mat3.save(filename);
-	
 
-
-  
     return 0;
 }
