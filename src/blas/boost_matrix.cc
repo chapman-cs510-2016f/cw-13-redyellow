@@ -3,23 +3,22 @@
 
 // exploit namespaces to shorten code
 using namespace boost::numeric::ublas;
-using std::cout; 
+using std::cout;
 using std::endl;
 
 void print_plane(matrix<std::complex<long double> > p, int rows, int cols)
 {
 	int r,c;
 
-	for (r=0;r<rows;r++){
-		for (c=0;c<cols;c++){
-			cout<<p(r,c) << ' ';	
+	for (r = 0; r < rows; r++){
+		for (c = 0; c < cols; c++){
+			cout << p(r,c) << ' ';
 		}
 		cout << endl;
 	}
-
 }
 
-int main(int argc, char **argv) 
+int main(int argc, char **argv)
 {
 
   // declare three 3x3 matrices of complex<long double> elements
