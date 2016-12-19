@@ -35,9 +35,10 @@ Complete the following exercises, saving your solutions in the indicated files.
 
 ## Assessment
 
-Analyze in this section what you found useful about this assignment in your own words. Include any lingering questions or comments that you may have.
+I learned how to use matrix in C++, and operator-overloading, template class, template function, save output into csv file.
 
-**I learned how to use matrix in C++, and operator-overloading, template class, template function, save output into csv file**
+Have got some good exercise on how Matrix works in C++.  It is different from Stack and Queue in that Matrix is two dimensional.  Template class makes things fancier.  Also have got deeper understanding in operator overloading.  And have learned how to write and save CSV files.
+
 
 ## Honor Pledge
 
